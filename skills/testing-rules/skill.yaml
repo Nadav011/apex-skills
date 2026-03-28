@@ -1,0 +1,16 @@
+name: testing-rules
+version: "24.5.0"
+description: "Testing and quality rules - Vitest 4, Playwright 1.58, static analysis/Biome, Zod 4 validation, coverage strategy, MSW mocking"
+phase: AUTO
+role: TESTING_RULES_REFERENCE
+triggers:
+  - vitest
+  - playwright
+  - e2e
+  - biome
+  - static analysis
+  - zod validation
+  - coverage
+commands:
+  - name: /testing-rules
+    description: Load testing and quality rules and references

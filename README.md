@@ -13,6 +13,27 @@ This repo is a local draft. It does not claim publication, installability, marke
 - Keep each exported skill self-contained and dependency-light.
 - Keep launch copy tied to verified local state only.
 
+## Included Skills
+
+The current local export pass includes 14 portable skill folders:
+
+- `a11y`
+- `adversarial-review`
+- `apex-guards`
+- `backend-rules`
+- `edge-case-hunter`
+- `flutter-rules`
+- `frontend-rules`
+- `owasp-security`
+- `perf-expert`
+- `pwa-expert`
+- `rtl-validator`
+- `security-rules`
+- `testing-rules`
+- `zod-patterns`
+
+`rtl-fix` is still missing from the local `~/.claude/skills/` tree, so it was not exported into this pass.
+
 ## Layout
 
 - `skills/` - portable skill copies, shortlist, and export template
@@ -40,6 +61,6 @@ apex-skills/
 
 ## Next Steps
 
-1. Copy the selected portable skills into `skills/`.
-2. Strip Claude-specific frontmatter fields where needed.
-3. Keep the blog draft conservative until the Phase 2 self-healing rollout is actually verified.
+1. Review the copied skill folders for any remaining local-path assumptions.
+2. Decide whether `rtl-fix` should be created, restored, or removed from the shortlist.
+3. Keep the blog draft conservative until the operational rollout is actually verified.

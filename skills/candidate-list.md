@@ -22,6 +22,8 @@ This is a local shortlist for the first export pass. Keep it conservative until 
 
 ## Export Notes
 
+- Exported now: all listed skills except `rtl-fix`.
+- `rtl-fix` is currently missing from local `~/.claude/skills/`, so it needs a separate restore/create/remove decision.
 - Strip Claude-specific `model:` frontmatter fields when exporting.
 - Keep each skill folder self-contained.
 - Validate the final set before any public publication step.

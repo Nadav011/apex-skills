@@ -1,0 +1,17 @@
+name: backend-rules
+version: "24.5.0"
+description: "Backend development rules - API design, database/RLS, caching/rate-limiting, error handling, tRPC, Hono, payments, feature flags"
+phase: AUTO
+role: BACKEND_RULES_REFERENCE
+triggers:
+  - api
+  - database
+  - supabase
+  - trpc
+  - hono
+  - rls
+  - payments
+  - stripe
+commands:
+  - name: /backend-rules
+    description: Load backend development rules and references

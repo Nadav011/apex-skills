@@ -1,0 +1,78 @@
+name: a11y
+version: "24.6.0"
+description: |
+  Accessibility specialist skill for WCAG 2.2 AAA compliance, WAI-ARIA 1.2/1.3, inclusive design,
+  screen reader testing, and mobile accessibility. Covers web, Flutter, and PWA patterns.
+  Triggers on: /a11y, accessibility, wcag, aria, screen reader, voiceover, talkback, nvda, jaws
+
+inherits:
+  - ~/.claude/CLAUDE.md
+
+triggers:
+  - a11y
+  - accessibility
+  - wcag
+  - aria
+  - screen reader
+  - voiceover
+  - talkback
+  - nvda
+  - jaws
+  - inclusive design
+
+commands:
+  - name: /a11y
+    description: Full accessibility reference and audit guidance
+  - name: /a11y web
+    description: Web accessibility patterns (WCAG 2.2, ARIA, HTML)
+  - name: /a11y flutter
+    description: Flutter accessibility (Semantics, focus, screen readers)
+  - name: /a11y mobile
+    description: Mobile accessibility (VoiceOver, TalkBack, gestures)
+  - name: /a11y pwa
+    description: PWA-specific accessibility patterns
+  - name: /a11y audit
+    description: Accessibility testing and automation patterns
+  - name: /a11y test
+    description: Automated a11y testing (axe-core, Playwright, Pa11y)
+
+allowed_tools:
+  - Read
+  - Grep
+  - Glob
+  - Edit
+  - Write
+  - Bash
+
+prime_directives:
+  - WCAG 2.2 AAA is the target level, not AA — enforce 7:1 contrast, 44x44px touch targets
+  - RTL-FIRST is mandatory — ms-/me-/ps-/pe-/inset-s-/inset-e- ONLY (never ml-/mr-/left-/right-)
+  - Inset positioning uses inset-s-*/inset-e-* (TW 4.2; start-*/end-* deprecated for inset)
+  - React Compiler handles memoization — never use useCallback/useMemo/React.memo
+  - Use proxy.ts not middleware.ts (Next.js 16)
+  - Use Biome 2.4.4 not ESLint
+  - Use @chialab/vitest-axe (NOT abandoned vitest-axe@0.1.0)
+  - Pin versions — axe-core 4.11.1, Playwright 1.58.2, Vitest 4.0.18
+  - Flutter textScalerOf (NOT deprecated textScaleFactorOf)
+  - Native HTML elements over ARIA when possible
+  - Test with real screen readers, not just automated tools
+  - prefers-reduced-motion is mandatory for ALL animations
+
+cross_references:
+  - skill: verify-app
+    context: "Accessibility gates A1-A15 integrated in verification pipeline"
+  - skill: flutter-rules
+    context: "Flutter Semantics, focus management, RTL semantics"
+  - skill: frontend-rules
+    context: "Web component a11y, HTML semantics, ARIA patterns"
+  - skill: pwa-expert
+    context: "PWA offline indicators, install prompt, push notification a11y"
+  - skill: testing-rules
+    context: "axe-core integration, Playwright a11y snapshots, CI pipeline"
+
+references:
+  - references/web-a11y.md
+  - references/flutter-a11y.md
+  - references/mobile-a11y.md
+  - references/pwa-a11y.md
+  - references/a11y-testing.md

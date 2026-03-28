@@ -1,0 +1,17 @@
+name: frontend-rules
+version: "24.5.0"
+description: "Frontend development rules - Next.js 16.1, React 19, Tailwind v4.2, caching, performance, design system, state/forms, accessibility, SEO"
+phase: AUTO
+role: FRONTEND_RULES_REFERENCE
+triggers:
+  - nextjs
+  - react
+  - tailwind
+  - design-system
+  - performance
+  - seo
+  - forms
+  - zustand
+commands:
+  - name: /frontend-rules
+    description: Load frontend development rules and references

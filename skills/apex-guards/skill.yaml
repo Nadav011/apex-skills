@@ -1,0 +1,19 @@
+name: apex-guards
+version: "24.5.0"
+description: |
+  APEX behavioral guards - replaces CLI hooks for non-CLI environments.
+  RTL enforcement, security scanning, verification gates, knowledge capture.
+  Apply these checks BEFORE every file write and BEFORE claiming done.
+inherits:
+  - ~/.claude/CLAUDE.md
+phase: AUTO
+role: BEHAVIORAL_GUARD
+triggers:
+  - guards
+  - behavioral guards
+  - apex guards
+  - pre-write guard
+  - verification gate
+commands:
+  - name: /apex-guards
+    description: Load behavioral guards for pre-write security, RTL enforcement, and pre-completion verification

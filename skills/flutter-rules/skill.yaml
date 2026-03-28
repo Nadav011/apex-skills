@@ -1,0 +1,15 @@
+name: flutter-rules
+version: "24.5.0"
+description: "Flutter 3.41/Dart 3.11 development rules - architecture, Riverpod, testing, Firebase, security, CI/CD, packages, native bridge, debugging, AI/ML"
+phase: AUTO
+role: FLUTTER_RULES_REFERENCE
+triggers:
+  - flutter
+  - dart
+  - riverpod
+  - pubspec
+  - widget
+  - impeller
+commands:
+  - name: /flutter-rules
+    description: Load Flutter/Dart development rules and references
