@@ -1,0 +1,14 @@
+name: security-rules
+version: "24.5.0"
+description: "Security rules - supply chain, secrets, file uploads, Supabase RLS, security audit methodologies, OWASP Top 10"
+phase: AUTO
+role: SECURITY_RULES_REFERENCE
+triggers:
+  - security audit
+  - supply chain
+  - secrets
+  - file upload
+  - supabase security
+commands:
+  - name: /security-rules
+    description: Load security rules and references

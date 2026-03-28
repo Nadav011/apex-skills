@@ -1,0 +1,346 @@
+/**
+ * Global CSS Styles - RTL-First Configuration
+ *
+ * This template provides RTL-optimized global styles.
+ * Copy this to your app/globals.css file.
+ *
+ * @version 1.0.0
+ */
+
+/* =============================================================================
+   Tailwind Directives
+   ============================================================================= */
+
+@import "tailwindcss";
+
+/* =============================================================================
+   CSS Custom Properties (CSS Variables)
+   ============================================================================= */
+
+@layer base {
+  :root {
+    /* Colors - Light Mode */
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 217 91% 60%;
+
+    /* Border Radius */
+    --radius: 0.5rem;
+
+    /* Spacing (8pt grid) */
+    --spacing-1: 0.25rem; /* 4px */
+    --spacing-2: 0.5rem; /* 8px */
+    --spacing-3: 0.75rem; /* 12px */
+    --spacing-4: 1rem; /* 16px */
+    --spacing-5: 1.25rem; /* 20px */
+    --spacing-6: 1.5rem; /* 24px */
+    --spacing-8: 2rem; /* 32px */
+    --spacing-10: 2.5rem; /* 40px */
+    --spacing-12: 3rem; /* 48px */
+  }
+
+  .dark {
+    /* Colors - Dark Mode */
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 217 91% 60%;
+  }
+}
+
+/* =============================================================================
+   Base Styles
+   ============================================================================= */
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    border-color: hsl(var(--border));
+  }
+
+  html {
+    /* RTL is set via dir="rtl" attribute in layout.tsx */
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
+  }
+
+  /* Focus visible styles for accessibility */
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+
+  /* Selection color */
+  ::selection {
+    background-color: hsl(var(--primary) / 0.2);
+    color: hsl(var(--foreground));
+  }
+}
+
+/* =============================================================================
+   RTL-Specific Utilities
+   ============================================================================= */
+
+@layer utilities {
+  /* LTR content within RTL context */
+  .ltr-content {
+    direction: ltr;
+    display: inline-block;
+    unicode-bidi: embed;
+  }
+
+  /* Force LTR for numbers and code */
+  .ltr-numbers {
+    direction: ltr;
+    unicode-bidi: isolate;
+    font-feature-settings:
+      "tnum" 1,
+      "lnum" 1;
+  }
+
+  /* RTL-aware text truncation */
+  .truncate-rtl {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    direction: inherit;
+  }
+
+  /* Hide scrollbar but keep functionality */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* =============================================================================
+   RTL-Aware Component Styles
+   ============================================================================= */
+
+@layer components {
+  /* RTL-aware card with start border accent */
+  .card-accent-start {
+    border-inline-start-width: 4px;
+  }
+
+  /* RTL-aware card with end border accent */
+  .card-accent-end {
+    border-inline-end-width: 4px;
+  }
+
+  /* RTL-aware input with icon */
+  .input-with-icon {
+    padding-inline-start: 2.5rem;
+  }
+
+  .input-icon {
+    position: absolute;
+    inset-inline-start: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+
+  /* RTL-aware badge positioning */
+  .badge-top-end {
+    position: absolute;
+    inset-block-start: -0.5rem;
+    inset-inline-end: -0.5rem;
+  }
+
+  .badge-top-start {
+    position: absolute;
+    inset-block-start: -0.5rem;
+    inset-inline-start: -0.5rem;
+  }
+}
+
+/* =============================================================================
+   Animation Utilities
+   ============================================================================= */
+
+@layer utilities {
+  /* RTL-aware slide animations */
+  .animate-slide-in-start {
+    animation: slide-in-start 0.3s ease-out;
+  }
+
+  .animate-slide-in-end {
+    animation: slide-in-end 0.3s ease-out;
+  }
+
+  @keyframes slide-in-start {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-in-end {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  /* RTL context: flip the animations */
+  [dir="rtl"] .animate-slide-in-start {
+    animation-name: slide-in-end;
+  }
+
+  [dir="rtl"] .animate-slide-in-end {
+    animation-name: slide-in-start;
+  }
+}
+
+/* =============================================================================
+   Form Styles
+   ============================================================================= */
+
+@layer base {
+  /* Email and URL inputs should always be LTR */
+  input[type="email"],
+  input[type="url"],
+  input[type="tel"] {
+    direction: ltr;
+    text-align: start;
+  }
+
+  /* Preserve text-align for these inputs */
+  [dir="rtl"] input[type="email"],
+  [dir="rtl"] input[type="url"],
+  [dir="rtl"] input[type="tel"] {
+    text-align: left;
+  }
+
+  /* Code elements should be LTR */
+  code,
+  pre,
+  kbd,
+  samp {
+    direction: ltr;
+    unicode-bidi: isolate;
+  }
+}
+
+/* =============================================================================
+   Print Styles
+   ============================================================================= */
+
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+
+  /* Preserve RTL direction in print */
+  [dir="rtl"] {
+    direction: rtl;
+  }
+
+  /* Hide interactive elements */
+  button,
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* =============================================================================
+   Reduced Motion
+   ============================================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* =============================================================================
+   Usage Notes
+   ============================================================================= */
+
+/*
+ * RTL-First CSS Guidelines:
+ *
+ * 1. ALWAYS use logical properties:
+ *    - margin-inline-start/end instead of margin-left/right
+ *    - padding-inline-start/end instead of padding-left/right
+ *    - inset-inline-start/end instead of left/right
+ *    - text-align: start/end instead of left/right
+ *    - border-inline-start/end instead of border-left/right
+ *    - float: inline-start/end instead of left/right
+ *
+ * 2. For Tailwind classes:
+ *    - ms-* instead of ml-*
+ *    - me-* instead of mr-*
+ *    - ps-* instead of pl-*
+ *    - pe-* instead of pr-*
+ *    - inset-s-* instead of left-* (inset positioning — TW 4.2; start-* deprecated)
+ *    - inset-e-* instead of right-* (inset positioning — TW 4.2; end-* deprecated)
+ *    - inset-s-*/inset-e-* generate inset-inline-start/inset-inline-end for absolute/fixed positioning
+ *    - text-start instead of text-left
+ *    - text-end instead of text-right
+ *
+ * 3. For LTR content (numbers, code):
+ *    - Use .ltr-content or .ltr-numbers utility classes
+ *    - Or wrap in <span dir="ltr">
+ *
+ * 4. For directional icons:
+ *    - Add rtl:rotate-180 class to flip arrows/chevrons
+ */

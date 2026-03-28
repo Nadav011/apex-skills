@@ -1,0 +1,134 @@
+name: pwa-expert
+version: "24.5.0"
+description: "Service Worker Supreme - vite-plugin-pwa + Workbox 7.x, offline-first, Lighthouse 100, 35 NVIDIA optimizations, 8 Android rendering fixes"
+phase: 2.4
+role: SERVICE_WORKER_SUPREME
+
+triggers:
+  - pwa
+  - pwa setup
+  - service worker
+  - vite-plugin-pwa
+  - injectManifest
+  - workbox
+  - offline-first
+  - progressive web app
+  - web app manifest
+  - sw.ts
+  - lighthouse pwa
+  - beforeinstallprompt
+  - precache
+  - cache strategy
+  - caching strategy
+  - app shell
+  - pwa install
+  - pwa audit
+  - pwa icons
+  - manifest.json
+  - add to home screen
+
+gates:
+  - PWA-1
+  - PWA-2
+  - PWA-3
+  - PWA-4
+  - PWA-5
+  - PWA-6
+  - PWA-7
+  - PWA-8
+  - PWA-9
+  - PWA-10
+  - PWA-11
+  - PWA-12
+  - PWA-13
+  - PWA-14
+  - PWA-15
+  - PWA-16
+  # Extended PWA Gates (referenced in content)
+  - PWA-17
+  - PWA-18
+  - PWA-19
+  - PWA-20  # Referenced in sections
+  - PWA-21  # Referenced in sections
+  - PWA-22  # Referenced in sections
+  # Android Rendering Gates (v24.5.0)
+  - G-ARF-1  # CONTENT_VISIBILITY
+  - G-ARF-2  # STROKE_WIDTH
+  - G-ARF-3  # VIEW_TRANSITIONS
+  - G-ARF-4  # WILL_CHANGE
+  - G-ARF-5  # SCROLL_MARGIN
+  - G-ARF-6  # TOUCH_TARGETS
+  - G-ARF-7  # Z_INDEX_LIMITS
+  - G-ARF-8  # NETWORK_TIMEOUT
+
+commands:
+  - setup
+  - audit
+  - debug
+  - manifest
+  - icons
+  - offline
+  - cache
+  - test
+  - security
+  - doctor
+  # NVIDIA-LEVEL commands (v24.5.0)
+  - nvidia       # Apply 35 NVIDIA-level optimizations
+  - brotli       # Setup Brotli compression (25-30% smaller)
+  - streaming    # Configure streaming responses (200-500ms faster)
+  - partytown    # Setup analytics offload (50% INP improvement)
+  # ANDROID RENDERING commands (v24.5.0)
+  - android-rendering-audit    # Full Android rendering issues audit
+  - fix-content-visibility     # Disable content-visibility for Android
+  - fix-stroke-width           # Standardize SVG strokeWidth
+  - fix-touch-targets          # Add 44px touch target wrappers
+  - fix-view-transitions       # Disable View Transitions for old Android
+  - fix-scroll-margin          # Fix TanStack Virtual scrollMargin race
+
+# Model selection per task type
+model_guidance:
+  architecture: opus    # Complex PWA decisions
+  implementation: sonnet # SW code generation
+  validation: sonnet    # Quick manifest/icon checks
+
+# 9 Dimensions coverage
+dimensions:
+  D1_Security: 85%      # CSP, COOP/COEP, SW scope
+  D2_Performance: 100%  # 35 NVIDIA optimizations
+  D3_Accessibility: 60% # Reduced motion, screen reader
+  D4_SEO: N/A           # Out of scope for PWA
+  D5_RTL: 100%          # Full logical properties
+  D6_Responsive: 100%   # 44px touch, device parity
+  D7_Offline: 100%      # Core skill domain
+  D8_Testing: 95%       # Playwright, Lighthouse CI
+  D9_Documentation: 100% # 19 reference files
+
+knowledge_base:
+  primary: ~/.claude/skills/pwa-expert/references/
+  files:
+    # Core references
+    - pwa-master-checklist.md
+    - service-worker-patterns.md
+    - pwa-android-optimization.md
+    - pwa-ios-limitations.md
+    - pwa-lighthouse-fixes.md
+    - pwa-analytics.md
+    - pwa-device-parity-checklist.md
+    - pwa-push-troubleshooting.md
+    - pwa-twa-play-store.md
+    - old-android-css-compat.md
+    - pwa-testing-patterns.md
+    - pwa-freezing-prevention.md
+    - pwa-ios-android-parity.md
+    - pwa-edge-cases.md
+    - pwa-manifest-complete.md
+    # NVIDIA-LEVEL references (v24.5.0)
+    - nvidia-level-optimizations.md
+    - vite-pwa-nvidia-config.md
+    - pwa-runtime-hooks.md
+    # ANDROID RENDERING references (v24.5.0)
+    - android-rendering-fixes.md
+
+fallback_agent: mobile
+
+# PWA-EXPERT v24.5.0 | Updated: 2026-02-19

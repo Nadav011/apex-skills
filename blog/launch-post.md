@@ -18,7 +18,7 @@ The value is not hype. The value is consistency: security patterns, RTL conventi
 
 ### What Is Included
 
-- A curated set of portable skills
+- A curated set of 14 locally exported portable skills
 - Short installation and usage notes
 - Lightweight examples and assets
 - A repo structure that stays easy to review and extend later
@@ -26,6 +26,7 @@ The value is not hype. The value is consistency: security patterns, RTL conventi
 ### What Is Still Being Validated
 
 - The final portable skill shortlist
+- Whether `rtl-fix` should join the first export pass or be replaced
 - The export format for Claude-specific frontmatter
 - The actual publication flow
 - The exact copy that should be used once the rollout is verified
