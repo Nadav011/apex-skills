@@ -1,0 +1,9 @@
+[submodule "mcp-servers/auap-builder"]
+	path = mcp-servers/auap-builder
+	url = ./mcp-servers/auap-builder
+[submodule "mcp-servers/hydra-router"]
+	path = mcp-servers/hydra-router
+	url = ./mcp-servers/hydra-router
+[submodule "mcp-servers/rtl-fixer"]
+	path = mcp-servers/rtl-fixer
+	url = ./mcp-servers/rtl-fixer

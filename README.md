@@ -2,6 +2,11 @@
 
 Local scaffold for the future public skill pack. This repository is intentionally conservative: it records structure, working notes, and draft copy only.
 
+## Quick Install
+```bash
+curl -fsSL https://raw.githubusercontent.com/Nadav011/apex-skills/main/install.sh | bash
+```
+
 ## Status
 
 This repo is a local draft. It does not claim publication, installability, marketplace listing, production adoption, or revenue results.
