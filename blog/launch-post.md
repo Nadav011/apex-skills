@@ -4,37 +4,39 @@ Working title: APEX Skills launch
 
 ## Draft Positioning
 
-APEX Skills is a local-first packaging effort for reusable agent skills. The goal is to turn a curated set of operational patterns into a portable skill pack that can be published later, after the workflow is actually verified end to end.
+APEX Skills is a local-first packaging effort for reusable agent skills. The aim is to turn a curated set of operational patterns into a portable skill pack that can be published later, after the workflow is actually verified end to end.
 
-## Draft Outline
+## Outline
 
-### 1. Opening
+### Opening
 
-Introduce the problem: reusable agent skills are easy to scatter across local config, but harder to keep portable, versioned, and reviewable.
+Reusable skills are easy to scatter across local config, but harder to keep portable, versioned, and reviewable. This project exists to make that packaging problem boring and repeatable.
 
-### 2. Why This Exists
+### Why This Exists
 
-Explain that the pack is focused on operational reuse, not hype. The value is in consistent patterns for security, RTL, testing, and workflow hygiene.
+The value is not hype. The value is consistency: security patterns, RTL conventions, testing habits, and workflow hygiene that can move between repos without dragging environment-specific assumptions with them.
 
-### 3. What Will Be Included
+### What Is Included
 
 - A curated set of portable skills
 - Short installation and usage notes
-- Lightweight assets and examples
-- A repository structure that is easy to review and extend later
+- Lightweight examples and assets
+- A repo structure that stays easy to review and extend later
 
-### 4. What Is Still Being Validated
+### What Is Still Being Validated
 
 - The final portable skill shortlist
 - The export format for Claude-specific frontmatter
 - The actual publication flow
+- The exact copy that should be used once the rollout is verified
 
-### 5. Closing
+### Closing
 
-Keep the call to action small and concrete. Point readers to the repo once the validation work is complete.
+Keep the call to action small and concrete. Point readers to the repo only after the validation work is complete and the public version is ready.
 
-## Notes
+## Draft Claims Policy
 
 - Keep all claims tied to verified local state.
 - Do not state that any public repo, marketplace listing, or revenue milestone is complete until it is actually complete.
 - Avoid product claims that depend on the Phase 2 rollout until that rollout is verified.
+- Treat any launch numbers, adoption claims, or market positioning as placeholders until they are sourced and current.

@@ -1,6 +1,6 @@
 # Portable Skill Candidate List
 
-This is a local shortlist for the first export pass.
+This is a local shortlist for the first export pass. Keep it conservative until the repository and publication flow are both verified.
 
 ## Candidate Set
 
@@ -25,3 +25,4 @@ This is a local shortlist for the first export pass.
 - Strip Claude-specific `model:` frontmatter fields when exporting.
 - Keep each skill folder self-contained.
 - Validate the final set before any public publication step.
+- Do not expand the shortlist with repo-specific skills until the public packaging flow is confirmed.
