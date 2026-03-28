@@ -1,0 +1,60 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  docs-and-structure:
+    runs-on: [self-hosted, linux, x64, pop-os]
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
+      - name: Validate repository structure
+        run: |
+          test -f README.md
+          test -d skills
+          test -d blog
+      - name: Validate markdown, JSON, and YAML
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          import yaml
+
+          root = Path('.')
+          for path in root.rglob('*'):
+              if not path.is_file():
+                  continue
+              if '.git' in path.parts:
+                  continue
+              if path.suffix == '.json':
+                  json.loads(path.read_text(encoding='utf-8'))
+              elif path.suffix in {'.yml', '.yaml'}:
+                  yaml.safe_load(path.read_text(encoding='utf-8'))
+              elif path.suffix == '.md':
+                  text = path.read_text(encoding='utf-8')
+                  if not text.strip():
+                      raise ValueError(f'Empty markdown file: {path}')
+          PY
+      - name: Validate skill directories
+        run: |
+          for dir in skills/*; do
+            [ -d "$dir" ] || continue
+            if [ "$(basename "$dir")" = ".gitkeep" ]; then
+              continue
+            fi
+            test -f "$dir/SKILL.md" || {
+              echo "Missing SKILL.md in $dir"
+              exit 1
+            }
+          done
+      - name: Check git diff hygiene
+        run: git diff --check
