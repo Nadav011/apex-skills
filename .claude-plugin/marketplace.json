@@ -1,0 +1,61 @@
+{
+  "name": "apex-skills",
+  "owner": {
+    "name": "Nadav Cohen",
+    "email": "nadav@nadav.ai"
+  },
+  "metadata": {
+    "description": "APEX Skills — production-grade Claude Code skills for RTL-first, security-hardened development",
+    "version": "1.0.0",
+    "homepage": "https://github.com/Nadav011/apex-skills"
+  },
+  "plugins": [
+    {
+      "name": "quality-rules",
+      "description": "Development quality rules — frontend, backend, testing, security, Flutter, Zod patterns",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/frontend-rules",
+        "./skills/backend-rules",
+        "./skills/testing-rules",
+        "./skills/security-rules",
+        "./skills/flutter-rules",
+        "./skills/zod-patterns"
+      ]
+    },
+    {
+      "name": "rtl-toolkit",
+      "description": "RTL-first development — validation, auto-fix, and enforcement for Hebrew/Arabic layouts",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/rtl-fix",
+        "./skills/rtl-validator"
+      ]
+    },
+    {
+      "name": "security-toolkit",
+      "description": "Security auditing — OWASP Top 10, APEX Guards, adversarial review, edge case hunting",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/owasp-security",
+        "./skills/apex-guards",
+        "./skills/adversarial-review",
+        "./skills/edge-case-hunter"
+      ]
+    },
+    {
+      "name": "testing-toolkit",
+      "description": "Testing and accessibility — a11y auditing, PWA expert, performance analysis",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/a11y",
+        "./skills/pwa-expert",
+        "./skills/perf-expert"
+      ]
+    }
+  ]
+}
