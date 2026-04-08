@@ -1,0 +1,42 @@
+# CodeRabbit Configuration — NADAV.AI projects
+# https://docs.coderabbit.ai/configuration
+
+language: "he"
+
+reviews:
+  auto_review:
+    enabled: true
+    drafts: false
+    base_branches:
+      - main
+      - master
+
+  path_filters:
+    - "!node_modules/**"
+    - "!dist/**"
+    - "!.next/**"
+    - "!build/**"
+    - "!coverage/**"
+    - "!*.lock"
+    - "!pnpm-lock.yaml"
+    - "!package-lock.json"
+    - "!.claude/**"
+    - "!*.min.js"
+    - "!*.min.css"
+    - "!**/*.g.dart"
+    - "!**/*.freezed.dart"
+
+  path_instructions:
+    - path: "**/*.ts"
+      instructions: "Enforce strict TypeScript — no 'any', no unsafe casts. Check for proper error handling with Result pattern."
+    - path: "**/*.tsx"
+      instructions: "Verify RTL support: ms-/me-/ps-/pe- (not ml/mr/pl/pr), text-start/end (not left/right), dir='rtl' on root. Check accessibility: aria-labels, keyboard navigation."
+    - path: "supabase/migrations/**"
+      instructions: "Check RLS policies: no auth.uid() IS NULL bypass, SECURITY DEFINER functions use auth.uid() not parameters, DROP POLICY IF EXISTS before CREATE POLICY."
+    - path: ".github/workflows/**"
+      instructions: "Verify: runs-on uses self-hosted (not ubuntu-latest), cancel-in-progress:false on deploy, trivy-action pinned to SHA, no || true on security scans."
+
+chat:
+  auto_reply: true
+
+tone_instructions: "Be direct and technical. No sycophancy. Flag security issues as CRITICAL. Use Hebrew for explanations."
