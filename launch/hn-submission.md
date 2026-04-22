@@ -1,24 +1,13 @@
-# Show HN: I maintain 18 projects with 0 manual CI debugging — here's the open-source system
+# Hacker News Submission
 
-Title: Show HN: 86 AI coding skills that maintain my 18 production projects automatically
+**Title (max 80 chars):**
+Show HN: 17 portable skills that stop AI coding assistants from writing bad code
 
-URL: https://github.com/Nadav011/apex-skills
+**Text (600 chars):**
+I've been running a 193-skill enforcement system across 18 production projects for two years. It blocks my AI assistant from writing RTL-unsafe CSS (ml-4 instead of ms-4), TypeScript `: any`, insecure eval(), and pushing to main.
 
-Text:
-I'm a solo developer maintaining 18 production projects (React, Next.js, Flutter, Python).
-Since March 2026, I haven't manually debugged a single CI failure.
+These are 17 of the most universally useful skills, ported to work across Claude Code, Gemini CLI, Kiro, and Cursor.
 
-The system (APEX) uses:
-- 86 skills for Claude Code (15 open-sourced here)
-- Self-healing CI that auto-fixes failures and opens draft PRs
-- Hydra v2 — an AI orchestrator that routes tasks to 4 providers based on Bayesian scores
-- RTL-first enforcement for Hebrew/Arabic apps (the only production toolkit)
+Install: curl -fsSL https://raw.githubusercontent.com/Nadav011/apex-skills/main/install.sh | bash
 
-What's open source:
-- 15 portable skills (RTL, security, testing, performance, accessibility)
-- RTL-First Dev Kit (Tailwind 4.2 + Flutter + Next.js patterns)
-- APEX CLI with terminal dashboard
-
-Cost: ~$300/month infrastructure, saves ~$3,200/month in debugging time.
-
-Built with Claude Code, Codex, Gemini, Kimi, and MiniMax.
+The full 193-skill system and how it evolved from zero to 70/70 quality score is at nadavc.ai/apex.
