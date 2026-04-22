@@ -1,0 +1,13 @@
+# Development and launch materials — not needed in npm package
+blog/
+gumroad/
+launch/
+install/
+mcp-servers/
+video/
+examples/
+.github/
+.coderabbit.yaml
+secrets.env.template
+*.sh
+!install.sh
