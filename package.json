@@ -1,7 +1,7 @@
 {
   "name": "apex-skills",
   "version": "2.1.0",
-  "description": "25 portable skills that enforce code quality across Claude Code, Gemini CLI, Kiro & Cursor",
+  "description": "28 portable skills that enforce code quality across Claude Code, Gemini CLI, Kiro & Cursor",
   "keywords": [
     "claude-code",
     "gemini-cli",

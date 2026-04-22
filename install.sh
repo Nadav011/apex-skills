@@ -36,7 +36,7 @@ SOURCE_CACHE="$HOME/.apex-skills-cache"
 
 printf "\n╔══════════════════════════════════════════╗\n"
 printf "║         APEX Skills Installer v2         ║\n"
-printf "║   25 battle-tested skills → you          ║\n"
+printf "║   28 battle-tested skills → you          ║\n"
 printf "╚══════════════════════════════════════════╝\n\n"
 printf "Platform : %s\n" "$PLATFORM"
 printf "Target   : %s\n\n" "$DEST"
