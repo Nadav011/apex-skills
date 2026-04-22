@@ -1,0 +1,19 @@
+name: Skill Count Check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify skill count in package.json matches actual skills
+        run: |
+          actual=$(find skills -mindepth 1 -maxdepth 1 -type d | wc -l)
+          declared=$(python3 -c "import json; d=json.load(open('package.json')); print(d['description'].split()[0])")
+          echo "Actual skills: $actual"
+          echo "Declared in description: $declared"
+          test "$actual" -eq "$declared" || { echo "MISMATCH: package.json says $declared but found $actual skill dirs"; exit 1; }
