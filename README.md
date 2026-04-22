@@ -1,5 +1,9 @@
 # APEX Skills
 
+[![CI](https://github.com/Nadav011/apex-skills/actions/workflows/ci.yml/badge.svg)](https://github.com/Nadav011/apex-skills/actions/workflows/ci.yml)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Skills](https://img.shields.io/badge/skills-28-brightgreen)](https://github.com/Nadav011/apex-skills/tree/main/skills)
+
 Your AI assistant just wrote `ml-4` in your RTL app. Again.
 
 You told it about RTL last week. You fixed it in code review. It doesn't remember. It doesn't care. It will do it again the next time you open a new chat.

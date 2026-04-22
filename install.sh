@@ -30,9 +30,21 @@ target_dir() {
     esac
 }
 
-PLATFORM=$(detect_platform "${1:-}")
+_ARG="${1:-}"
+[[ "$_ARG" == "--dry-run" ]] && _ARG=""
+PLATFORM=$(detect_platform "$_ARG")
 DEST=$(target_dir "$PLATFORM")
 SOURCE_CACHE="$HOME/.apex-skills-cache"
+
+# ── Dry-run ──────────────────────────────────────────────────────────
+if [[ "${1:-}" == "--dry-run" ]]; then
+    SKILL_COUNT=$(find "$(pwd)/skills" -name "SKILL.md" 2>/dev/null | wc -l | tr -d ' ')
+    [ "$SKILL_COUNT" -eq 0 ] && SKILL_COUNT=28
+    printf "\n[dry-run] Would install %s skills to %s\n" "$SKILL_COUNT" "$DEST"
+    printf "[dry-run] Platform: %s\n" "$PLATFORM"
+    printf "[dry-run] No files written.\n\n"
+    exit 0
+fi
 
 printf "\n╔══════════════════════════════════════════╗\n"
 printf "║         APEX Skills Installer v2         ║\n"
