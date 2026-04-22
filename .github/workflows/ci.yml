@@ -12,10 +12,10 @@ concurrency:
 
 jobs:
   docs-and-structure:
-    runs-on: [self-hosted, linux, x64, pop-os]
+    runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
+      - uses: actions/checkout@v4
       - name: Validate repository structure
         run: |
           test -f README.md
