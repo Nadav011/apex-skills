@@ -1,0 +1,17 @@
+# Secrets — never commit these
+.secrets.env
+secrets.env
+*.env.local
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Node
+node_modules/
