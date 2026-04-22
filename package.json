@@ -1,0 +1,35 @@
+{
+  "name": "apex-skills",
+  "version": "2.0.0",
+  "description": "22 portable skills that enforce code quality across Claude Code, Gemini CLI, Kiro & Cursor",
+  "keywords": [
+    "claude-code",
+    "gemini-cli",
+    "ai-coding-assistant",
+    "developer-tools",
+    "code-quality",
+    "rtl",
+    "tailwind",
+    "typescript"
+  ],
+  "homepage": "https://nadavc.ai/apex",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Nadav011/apex-skills.git"
+  },
+  "license": "MIT",
+  "author": "Nadav Cohen <nadavcohen101196@gmail.com> (https://nadavc.ai)",
+  "bin": {
+    "apex-skills": "bin/apex-skills.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "bin/",
+    "skills/",
+    "install.sh",
+    "README.md",
+    "LICENSE"
+  ]
+}
