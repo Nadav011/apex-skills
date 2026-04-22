@@ -3,13 +3,13 @@
  * apex-skills CLI
  * Usage: npx apex-skills [install] [--platform claude-code|gemini|kiro|cursor|codex]
  */
-'use strict';
 
-const fs = require('fs');
-const path = require('path');
-const os = require('os');
-const { execSync, spawnSync } = require('child_process');
+import fs from 'fs';
+import path from 'path';
+import os from 'os';
+import { fileURLToPath } from 'url';
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const VERSION = '2.0.0';
 
 function detectPlatform() {
@@ -86,7 +86,6 @@ if (command === 'install' || !command.startsWith('-')) {
 
   fs.mkdirSync(dest, { recursive: true });
 
-  // If running via npx, skills are in the package directory
   const localSkills = path.join(__dirname, '..', 'skills');
   const { installed, updated } = installFromLocal(localSkills, dest);
 
