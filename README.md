@@ -86,7 +86,7 @@ git commit -m "feat(dashboard): add real-time activity feed"
 Three steps, nothing to configure:
 
 ```
-1. Install     →  curl ... | bash  copies 25 SKILL.md files to your AI's context directory
+1. Install     →  curl ... | bash  copies 28 SKILL.md files to your AI's context directory
 2. You type    →  "review this component for RTL safety"  (or any trigger keyword)
 3. AI loads    →  the matching skill enforces its rules for the entire session
 ```
@@ -127,7 +127,7 @@ There are no daemons, no background processes, no cloud services. The skill file
 
 ---
 
-## What's Included (25 Skills)
+## What's Included (28 Skills)
 
 | Category | Skill | What It Enforces |
 |----------|-------|-----------------|
@@ -209,7 +209,7 @@ The TypeScript rules come from a production incident where `: any` hid a null po
 
 The git rules come from a `git bisect` session that took 45 minutes because commit messages were `"stuff"` and `"wip"`.
 
-You don't need 193 skills to start. These 25 cover the highest-frequency bugs that AI assistants introduce.
+You don't need 193 skills to start. These 28 cover the highest-frequency bugs that AI assistants introduce.
 
 ---
 
