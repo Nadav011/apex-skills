@@ -156,6 +156,9 @@ There are no daemons, no background processes, no cloud services. The skill file
 | **Quality** | `apex-guards` | 8-gate verification: typecheck, lint, tests, secrets, RTL, bundle, types, touch targets |
 | **Quality** | `bundle-analyze` | Tracks First Load JS, flags pages over 100KB |
 | **Quality** | `perf-expert` | Core Web Vitals, React rendering, bundle splitting |
+| **Quality** | `code-review-checklist` | Security, correctness, performance, maintainability checklist for every PR |
+| **Database** | `database-patterns` | N+1 prevention, indexing, connection pooling, migration safety, Prisma/Drizzle |
+| **DevOps** | `docker-best-practices` | Multi-stage builds, non-root users, secrets management, health checks |
 
 ---
 
