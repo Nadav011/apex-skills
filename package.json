@@ -17,6 +17,7 @@
     "type": "git",
     "url": "https://github.com/Nadav011/apex-skills.git"
   },
+  "type": "module",
   "license": "MIT",
   "author": "Nadav Cohen <nadavcohen101196@gmail.com> (https://nadavc.ai)",
   "bin": {
