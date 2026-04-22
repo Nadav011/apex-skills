@@ -6,11 +6,13 @@ You told it about RTL last week. You fixed it in code review. It doesn't remembe
 
 This is a collection of portable AI skills — structured instruction files that make your AI coding assistant enforce real engineering standards, session after session, without you repeating yourself.
 
-One install. Works on Claude Code, Gemini CLI, Kiro, Cursor, and Codex.
+**5-second install. Zero config. Works with any codebase.**
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/Nadav011/apex-skills/main/install.sh | bash
 ```
+
+One install. Works on Claude Code, Gemini CLI, Kiro, Cursor, and Codex.
 
 ---
 
@@ -79,48 +81,15 @@ git commit -m "feat(dashboard): add real-time activity feed"
 
 ---
 
-## Platform Support
-
-| Platform | Status | Notes |
-|----------|--------|-------|
-| Claude Code | ✅ Full | Native SKILL.md support |
-| Gemini CLI | ✅ Full | Reads SKILL.md as context |
-| Kiro | ✅ Full | Spec-compatible format |
-| Cursor | ⚠️ Partial | Works as `.cursorrules` content |
-| Codex | ✅ Full | Reads markdown context files |
-
----
-
-## Skills Included (22)
-
-| Skill | Triggers | What It Enforces |
-|-------|----------|-----------------|
-| `rtl-fix` | RTL, direction, tailwind | Replaces `ml-*` → `ms-*`, `pl-*` → `ps-*`, adds `rtl:rotate-180` to directional icons |
-| `rtl-validator` | RTL audit, check direction | Scans for physical directional classes, reports violations |
-| `typescript-strict` | typescript, any type, type safety | Bans `: any`, enforces branded IDs, strict tsconfig, Zod at boundaries |
-| `react-patterns` | react, component, hook, use client | Server vs Client decision tree, error boundaries, Suspense, custom hooks |
-| `nextjs-patterns` | next.js, app router, server action | File conventions, Server Actions with Zod, image/font optimization |
-| `git-discipline` | git, commit, branch, pr | Conventional commits, branch naming, no direct main pushes |
-| `env-validation` | env, process.env, dotenv | Validates all env vars at startup via Zod, t3-env createEnv pattern |
-| `owasp-security` | security, auth, input | OWASP Top 10:2025, ASVS 5.0, blocks `eval()`, SQL injection, XSS |
-| `security-rules` | secret, token, api key | Blocks hardcoded credentials, enforces env var usage |
-| `testing-rules` | test, vitest, playwright | Test pyramid, Vitest 4, Playwright MCP, coverage strategy |
-| `zod-patterns` | zod, validation, schema | Zod 4 schemas, safeParse, runtime type validation |
-| `a11y` | accessibility, a11y, aria | WCAG 2.2 AA, touch targets, screen reader patterns |
-| `apex-guards` | quality gate, pre-commit | 8-gate verification: typecheck, lint, tests, secrets, RTL, bundle, types, touch targets |
-| `commit` | commit, conventional commits | Full OMEGA flow: purge → audit → atomic → security → release |
-| `bundle-analyze` | bundle size, first load | Tracks First Load JS, flags pages over 100KB |
-| `perf-expert` | performance, LCP, CLS | Core Web Vitals, React rendering, bundle splitting |
-| `pwa-expert` | PWA, service worker, offline | Manifest, caching strategies, push notifications |
-| `frontend-rules` | frontend, component, styling | Component architecture, CSS logical properties, design tokens |
-| `backend-rules` | backend, API, database | API design, query safety, error handling |
-| `edge-case-hunter` | edge cases, what could go wrong | Probes 12 failure dimensions: empty states, race conditions, overflow |
-| `adversarial-review` | code review, adversarial | Attacks your code before production does |
-| `flutter-rules` | flutter, dart, widget | Flutter directional APIs, `EdgeInsetsDirectional`, `AlignmentDirectional` |
-
----
-
 ## How It Works
+
+Three steps, nothing to configure:
+
+```
+1. Install     →  curl ... | bash  copies 25 SKILL.md files to your AI's context directory
+2. You type    →  "review this component for RTL safety"  (or any trigger keyword)
+3. AI loads    →  the matching skill enforces its rules for the entire session
+```
 
 Each skill is a `SKILL.md` file in a named folder. The AI reads it as context before writing code.
 
@@ -158,13 +127,65 @@ There are no daemons, no background processes, no cloud services. The skill file
 
 ---
 
+## What's Included (25 Skills)
+
+| Category | Skill | What It Enforces |
+|----------|-------|-----------------|
+| **RTL** | `rtl-fix` | Replaces `ml-*` → `ms-*`, `pl-*` → `ps-*`, adds `rtl:rotate-180` to directional icons |
+| **RTL** | `rtl-validator` | Scans for physical directional classes, reports all violations |
+| **Security** | `owasp-security` | OWASP Top 10:2025, ASVS 5.0, blocks `eval()`, SQL injection, XSS |
+| **Security** | `security-rules` | Blocks hardcoded credentials, enforces env var usage |
+| **Security** | `env-validation` | Validates all env vars at startup via Zod, t3-env createEnv pattern |
+| **TypeScript** | `typescript-strict` | Bans `: any`, enforces branded IDs, strict tsconfig, Zod at boundaries |
+| **TypeScript** | `zod-patterns` | Zod 4 schemas, safeParse, runtime type validation |
+| **Testing** | `testing-rules` | Test pyramid, Vitest 4, Playwright MCP, coverage strategy |
+| **Testing** | `edge-case-hunter` | Probes 12 failure dimensions: empty states, race conditions, overflow |
+| **Testing** | `adversarial-review` | Attacks your code before production does |
+| **Git** | `git-discipline` | Conventional commits, branch naming, no direct main pushes |
+| **Git** | `commit` | Full OMEGA flow: purge → audit → atomic → security → release |
+| **Framework** | `react-patterns` | Server vs Client decision tree, error boundaries, Suspense, custom hooks |
+| **Framework** | `nextjs-patterns` | File conventions, Server Actions with Zod, image/font optimization |
+| **Framework** | `flutter-rules` | Flutter directional APIs, `EdgeInsetsDirectional`, `AlignmentDirectional` |
+| **Framework** | `pwa-expert` | Manifest, caching strategies, push notifications, auto-update patterns |
+| **Architecture** | `api-design` | REST/RPC conventions, versioning, error shapes, pagination |
+| **Architecture** | `backend-rules` | Query safety, connection pooling, error handling, structured logging |
+| **Architecture** | `frontend-rules` | Component architecture, CSS logical properties, design tokens |
+| **Architecture** | `error-handling` | Error boundary hierarchy, typed errors, user-facing messages |
+| **Architecture** | `logging-patterns` | Structured JSON logging, PII scrubbing, log levels |
+| **Quality** | `a11y` | WCAG 2.2 AA, touch targets, screen reader patterns |
+| **Quality** | `apex-guards` | 8-gate verification: typecheck, lint, tests, secrets, RTL, bundle, types, touch targets |
+| **Quality** | `bundle-analyze` | Tracks First Load JS, flags pages over 100KB |
+| **Quality** | `perf-expert` | Core Web Vitals, React rendering, bundle splitting |
+
+---
+
+## Platform Support
+
+| Platform | Status | Install Path | Notes |
+|----------|--------|-------------|-------|
+| Claude Code | Full | `~/.claude/skills/` | Native SKILL.md support |
+| Gemini CLI | Full | `~/.gemini/skills/` | Reads SKILL.md as context |
+| Kiro | Full | `~/.kiro/agents/` | Spec-compatible format |
+| Codex | Full | `~/.codex/skills/` | Reads markdown context files |
+| Cursor | Partial | `.cursor/rules/` (project) | Works as `.cursorrules` content |
+
+The installer auto-detects your platform and copies to the right directory. To target a specific platform:
+
+```bash
+bash install.sh --platform gemini
+bash install.sh --platform kiro
+bash install.sh --platform cursor
+```
+
+---
+
 ## Install
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/Nadav011/apex-skills/main/install.sh | bash
 ```
 
-The installer copies skill files into your AI assistant's context directory. For Claude Code: `~/.claude/skills/`. For others, it follows the platform's convention.
+The installer copies skill files into your AI assistant's context directory and prints exactly what was installed.
 
 To install a single skill manually:
 
@@ -188,7 +209,27 @@ The TypeScript rules come from a production incident where `: any` hid a null po
 
 The git rules come from a `git bisect` session that took 45 minutes because commit messages were `"stuff"` and `"wip"`.
 
-You don't need 193 skills to start. These 22 cover the highest-frequency bugs that AI assistants introduce.
+You don't need 193 skills to start. These 25 cover the highest-frequency bugs that AI assistants introduce.
+
+---
+
+## Contributing
+
+To add a skill:
+
+1. Copy `skills/portable-skill-template.md` as your starting point — it has the required frontmatter fields and the mandatory security guardrail comment.
+2. Create `skills/<your-skill-name>/SKILL.md` in a fork of this repo.
+3. Add your skill to the table in this README.
+4. Open a PR with a description of what the skill enforces and which project(s) you run it on.
+
+Requirements before submitting:
+- The skill must prevent a real, high-frequency bug — not a hypothetical
+- Must work on Claude Code, Gemini CLI, Kiro, and Cursor without modification
+- No platform-specific frontmatter fields (`allowed-tools`, `context:`, `effort:`, `model:`, `agent:`)
+- Must include at least one before/after code example
+- Must include the security guardrail comment immediately after the frontmatter closing `---`
+
+Full details: [CONTRIBUTING.md](CONTRIBUTING.md) | Skill template: [skills/portable-skill-template.md](skills/portable-skill-template.md)
 
 ---
 
@@ -203,20 +244,6 @@ The complete 193-skill pack includes deep rules for:
 - And 170+ more
 
 **[Get the full APEX system at nadavc.ai/apex](https://nadavc.ai/apex)**
-
----
-
-## Contributing
-
-Contributions that meet the bar:
-
-1. The skill must prevent a real, high-frequency bug — not a hypothetical
-2. Must work on Claude Code, Gemini CLI, Kiro, and Cursor
-3. No platform-specific frontmatter fields (`allowed-tools`, `context:`, `effort:`, `model:`, `agent:`)
-4. Must include at least one before/after code example
-5. Must include the security guardrail comment after frontmatter
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for the full checklist and the skill template.
 
 ---
 
